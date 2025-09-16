@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Stack Icon -->
+  <symbol id="stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M3 7L12 12L21 7L12 2L3 7Z" />
+    <path d="M3 12L12 17L21 12" />
+    <path d="M3 17L12 22L21 17" />
+  </symbol>
+
+  <!-- Squares Icon -->
+  <symbol id="squares" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <rect x="3" y="3" width="7" height="7" />
+    <rect x="14" y="3" width="7" height="7" />
+    <rect x="3" y="14" width="7" height="7" />
+    <rect x="14" y="14" width="7" height="7" />
+  </symbol>
+  
+  <symbol id="briefcase-advance" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+  <path d="M4 7h16a1 1 0 011 1v11a1 1 0 01-1 1H4a1 1 0 01-1-1V8a1 1 0 011-1z"/>
+  <path d="M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"/>
+  <path d="M12 12h4"/>
+  <path d="M14 10v4"/>
+</symbol>
+
+  
+  
+  
+  
+  
+  
+  
+</svg>
