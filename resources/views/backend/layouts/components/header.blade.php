@@ -12,7 +12,7 @@
 <div class="position-relative">
 <input aria-label="Search" class="form-control" placeholder="Search..."
 type="search">
-<i class="ti ti-search text-dark"></i>
+<i class="fa fa-search text-dark"></i>
 </div>
 </form>
 </div>
@@ -437,10 +437,10 @@ tabindex="-1">
     <div class="header-cart-btn">
         <a class="btn btn-primary" href="cart.html" role="button"
             target="_blank">
-            <i class="ti ti-eye"></i> View Cart</a>
+            <i class="fa fa-eye"></i> View Cart</a>
         <a class="btn btn-success" href="checkout.html"
             role="button" target="_blank">
-            Checkout <i class="ti ti-shopping-cart"></i></a>
+            Checkout <i class="fa fa-shopping-cart"></i></a>
     </div>
 </div>
 </div>
