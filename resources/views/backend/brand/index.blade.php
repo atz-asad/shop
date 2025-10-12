@@ -33,19 +33,24 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Apple</td>
-                    <td>apple</td>
-                    <td><img src="" alt=""></td>
-                    <td>1 min ago</td>
-                    <td>
-                      <a href="#" class="btn btn-sm btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a href="#" class="btn btn-sm btn-warning"><i class="fa-solid fa-eye"></i></a>
-                      <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
-                    </td>
 
-                  </tr>
+                  @foreach ($brands as $item)
+                    <tr>
+                      <td>{{ $loop -> iteration}}</td>
+                      <td>{{ $item->name }}</td>
+                      <td>{{ $item->slug }}</td>
+
+                      <td><img style="width: auto; height: 50px " src="{{ URL::to('media/brands/' . $item->logo) }}" alt="">
+                      </td>
+                      <td>1 min ago</td>
+                      <td>
+                        <a href="#" class="btn btn-sm btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#" class="btn btn-sm btn-warning"><i class="fa-solid fa-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
+                      </td>
+                    </tr>
+                  @endforeach
+
 
                 </tbody>
               </table>

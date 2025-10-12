@@ -12,7 +12,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return view('backend.brand.index');
+        $brands = Brand::latest() -> get();
+        return view('backend.brand.index', compact('brands'));
     }
 
     /**
@@ -28,7 +29,29 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        return $request -> all();
+        // validation
+        $request -> validate([
+            "name" => "required"
+        ]);
+
+        // logo upload
+        $fileName = "";
+
+        
+        if($request ->hasFile('logo')){
+            $fileName = $this->fileUpload($request->file('logo'), "media/brands/");
+        } 
+        
+
+        // data store
+        Brand::create([
+            "name"   => $request -> name, 
+            "slug"   => $this ->makeSlug($request -> name),
+            "logo"   => $fileName,
+        ]);
+
+        // retirn back
+        return back();
     }
 
     /**
