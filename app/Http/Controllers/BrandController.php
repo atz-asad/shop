@@ -22,6 +22,7 @@ class BrandController extends Controller
     public function create()
     {
         return view('backend.brand.create');
+        
     }
 
     /**
@@ -51,7 +52,7 @@ class BrandController extends Controller
         ]);
 
         // retirn back
-        return back();
+        return back()->with('success', 'Brand created successfully!');
     }
 
     /**
@@ -59,7 +60,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
+        return view('backend.brand.show', compact('brand'));
     }
 
     /**
@@ -67,7 +68,8 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        //
+
+        return view('backend.brand.edit', compact('brand'));
     }
 
     /**
@@ -75,7 +77,29 @@ class BrandController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+        // validation
+        $request->validate([
+            "name" => "required"
+        ]);
+
+        // logo upload
+        $fileName = $brand->logo;
+
+
+        if ($request->hasFile('logo')) {
+            $fileName = $this->fileUpload($request->file('logo'), "media/brands/");
+        }
+
+
+        // data store
+        $brand->update([
+            "name"   => $request->name,
+            "slug"   => $this->makeSlug($request->name),
+            "logo"   => $fileName,
+        ]);
+
+        // retirn back
+        return redirect()->route('brand.index')->with('success', 'Brand updated successfully!');
     }
 
     /**
@@ -83,6 +107,19 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+
+        if($brand){
+
+            //brand link unlink
+            unlink("media/brands/" . $brand -> logo);
+
+            Brand::destroy($brand -> id);
+        }else{
+            return back() -> with('error', 'Brand not found');
+        }
+
+        // return $brand;
+        // $brand->delete();
+        return redirect()->back()->with('success', 'Brand deleted successfully!');
     }
 }

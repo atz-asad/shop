@@ -6,8 +6,8 @@
     <div class="row m-1">
       <div class="col-12 ">
         <div class="d-flex justify-content-between g-3">
-          <h5 class="mb-2">All Brand</h5>
-          <a href="{{ route('brand.create') }}" class="btn btn-lg btn-primary">Create Brand</a>
+          <h5 class="mb-2">All product</h5>
+          <a href="{{ route('product.create') }}" class="btn btn-lg btn-primary">Create product</a>
         </div>
         @include('backend.layouts.components.message')
         <br>
@@ -28,32 +28,32 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>slug</th>
-                    <th>logo</th>
+                    <th>Image</th>
                     <th>Created At</th>
                     <th>Actiuon</th>
                   </tr>
                 </thead>
                 <tbody>
 
-                  @foreach ($brands as $item)
+                  @foreach ($products as $item)
                     <tr>
                       <td>{{ $loop->iteration }}</td>
                       <td>{{ $item->name }}</td>
                       <td>{{ $item->slug }}</td>
 
-                      <td><img style="width: auto; height: 50px " src="{{ URL::to('media/brands/' . $item->logo) }}"
+                      <td><img style="width: auto; height: 50px " src="{{ URL::to('media/products/' . $item->logo) }}"
                           alt="">
                       </td>
                       <td>1 min ago</td>
                       <td>
-                        <a href="{{ route('brand.edit', $item->id) }}" class="btn btn-sm btn-info"><i
+                        <a href="{{ route('product.edit', $item->id) }}" class="btn btn-sm btn-info"><i
                             class="fa-solid fa-pen-to-square"></i></a>
 
-                        <a href="{{ route('brand.show', $item->id) }}" class="btn btn-sm btn-warning"><i
+                        <a href="{{ route('product.show', $item->id) }}" class="btn btn-sm btn-warning"><i
                             class="fa-solid fa-eye"></i></a>
 
 
-                        <form action="{{ route('brand.destroy', $item->id) }}" method="POST"
+                        <form action="{{ route('product.destroy', $item->id) }}" method="POST"
                           style="display:inline-block;">
                           @csrf
                           @method('DELETE')

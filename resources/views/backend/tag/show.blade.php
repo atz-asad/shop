@@ -6,8 +6,8 @@
     <div class="row m-1">
       <div class="col-12 ">
         <div class="d-flex justify-content-between g-3 mb-3">
-          <h5 class="mb-2">Brand Details</h5>
-          <a href="{{ route('brand.index') }}" class="btn btn-lg btn-primary">Back</a>
+          <h5 class="mb-2">tag Details</h5>
+          <a href="{{ route('tag.index') }}" class="btn btn-lg btn-primary">Back</a>
         </div>
 
 
@@ -25,22 +25,22 @@
 
               <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                  <!-- Brand Logo -->
+                  <!-- tag Logo -->
                   <div class="mb-3">
-                    <img src="{{ URL::to('media/brands/' . $brand->logo) }}" alt="{{ $brand->name }}"
+                    <img src="{{ URL::to('media/tags/' . $tag->logo) }}" alt="{{ $tag->name }}"
                       class="img-fluid rounded" style="max-height: 100px;">
                   </div>
 
-                  <!-- Brand Name -->
-                  <h2 class="fw-bold text-primary mb-3">{{ $brand->name }}</h2>
+                  <!-- tag Name -->
+                  <h2 class="fw-bold text-primary mb-3">{{ $tag->name }}</h2>
 
                   <hr>
 
-                  <!-- Brand Details -->
+                  <!-- tag Details -->
                   <div class="text-start mx-auto" style="max-width: 400px;">
-                    <p><strong>ID:</strong> {{ $brand->id }}</p>
-                    <p><strong>Created at:</strong> {{ $brand->created_at->format('Y-m-d') }}</p>
-                    <p><strong>Updated at:</strong> {{ $brand->updated_at->format('Y-m-d') }}</p>
+                    <p><strong>ID:</strong> {{ $tag->id }}</p>
+                    <p><strong>Created at:</strong> {{ $tag->created_at->format('Y-m-d') }}</p>
+                    <p><strong>Updated at:</strong> {{ $tag->updated_at->format('Y-m-d') }}</p>
                   </div>
 
                   <hr>

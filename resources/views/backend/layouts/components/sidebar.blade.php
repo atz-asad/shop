@@ -12,7 +12,7 @@
 
     <div class="d-flex align-items-center nav-profile p-3">
       <span class="h-45 w-45 d-flex-center b-r-10 position-relative bg-danger m-auto">
-        <img alt="avatar" class="img-fluid b-r-10" src="{{asset('backend/assets/images/avatar/woman.jpg')}}">
+        <img alt="avatar" class="img-fluid b-r-10" src="{{ asset('backend/assets/images/avatar/woman.jpg') }}">
         <span class="position-absolute top-0 end-0 p-1 bg-success border border-light rounded-circle"></span>
       </span>
       <div class="flex-grow-1 ps-2">
@@ -81,10 +81,10 @@
           <li><a href="#">product </a></li>
         </ul>
       </li> --}}
-      <li class="no-sub"><a href="#">Product</a></li>
-      <li class="no-sub"><a href="#">Category</a></li>
-      <li class="no-sub"><a href="#">Tag</a></li>
-      <li class="no-sub"><a href="{{route('brand.index')}}">Brand </a></li>
+      <li class="no-sub"><a href="{{route('product.index')}}">Product</a></li>
+      <li class="no-sub"><a href="{{ route('category.index') }}">Category</a></li>
+      <li class="no-sub"><a href="{{ route('tag.index') }}">Tag</a></li>
+      <li class="no-sub"><a href="{{ route('brand.index') }}">Brand </a></li>
 
     </ul>
   </div>
