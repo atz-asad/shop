@@ -27,8 +27,8 @@
                 <div class="card-body text-center">
                   <!-- category Logo -->
                   <div class="mb-3">
-                    <img src="{{ URL::to('media/categorys/' . $category->logo) }}" alt="{{ $category->name }}"
-                      class="img-fluid rounded" style="max-height: 100px;">
+                    <img src="{{ URL::to('media/category/' . $category->photo) }}" alt="{{ $category->name }}"
+                      class="img-fluid rounded" style="max-height: 400px;">
                   </div>
 
                   <!-- category Name -->

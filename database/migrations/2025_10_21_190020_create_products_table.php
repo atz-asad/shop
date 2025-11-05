@@ -19,20 +19,19 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('subtitle');
             $table->string('feature_image');
-            $table->integer('regular_price') -> default(0);
-            $table->integer('sale_price') -> nullable();
-            $table->integer('stock') -> nullable();
-            $table->integer('rating') -> default(0);
-            $table->string('short_desc') -> nullable(0);
-            $table->string('long_desc') -> nullable(0);
-            $table->longText('gallery') -> nullable();
-
+            $table->integer('regular_price');
+            $table->integer('sale_price');
+            $table->integer('stock')->default(1);
+            $table->integer('rating')->default(0);
+            $table->longText('short_desc')->nullable(0);
+            $table->longText('long_desc')->nullable(0);
+            $table->longText('gallery')->nullable();
 
             //relational schema
-            $table -> foreignId("brands_id") -> constrained() -> onDelete('cascade');
+            $table -> foreignId("brand_id") -> constrained() -> onDelete('cascade');
 
             //base info
-            $table->string('status')->default(true);
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
