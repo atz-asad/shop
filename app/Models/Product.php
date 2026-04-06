@@ -23,7 +23,7 @@ class Product extends Model
 
 
     public function gallery(){
-        return $this->hasMany(Gallery::class);
+        return $this->hasMany(Gallery::class, 'product_id', 'id');
     }
 
     public function Brand(){

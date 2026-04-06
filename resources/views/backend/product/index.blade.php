@@ -41,9 +41,11 @@
                       <td>{{ $item->name }}</td>
                       <td>{{ $item->slug }}</td>
 
-                      <td><img style="width: auto; height: 50px " src="{{ URL::to('media/products/' . $item->logo) }}"
+                      <td>
+                        <img style="width: auto; height: 50px " src="{{ URL::to('media/product/' . $item->feature_image) }}"
                           alt="">
                       </td>
+
                       <td>1 min ago</td>
                       <td>
                         <a href="{{ route('product.edit', $item->id) }}" class="btn btn-sm btn-info"><i

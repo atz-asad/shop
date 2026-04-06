@@ -82,6 +82,7 @@
         </ul>
       </li> --}}
       <li class="no-sub"><a href="{{route('product.index')}}">Product</a></li>
+      <li class="no-sub"><a href="{{route('slider.index')}}">slider</a></li>
       <li class="no-sub"><a href="{{ route('category.index') }}">Category</a></li>
       <li class="no-sub"><a href="{{ route('tag.index') }}">Tag</a></li>
       <li class="no-sub"><a href="{{ route('brand.index') }}">Brand </a></li>

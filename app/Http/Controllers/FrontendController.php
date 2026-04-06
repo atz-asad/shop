@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     public function showShoppage(){
-        return view('frontend.pages.shop');
+        return view('frontend.pages.index');
     }
 }

@@ -97,9 +97,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        // $product->load('brand');
-        // $product = Product::with('brand')->findOrFail($id);
-        return $product->tags;
+        $galleries = Gallery::where('product_id', $product->id)->get();
+        return view('backend.product.show', compact('product', 'galleries')) ;
     }
 
     /**
@@ -107,7 +106,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('backend.product.edit', compact('product'));
     }
 
     /**
@@ -124,5 +123,33 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function shop(Request $request){
+        $name = null;
+
+        if($request->filled('name')){
+            $name = $request->name;
+        }
+        $products = Product::query()
+        ->when($name, function($query) use($name){
+            return $query->where('name', 'like', '%'.$name . '%');
+        })
+        ->get();
+        $trending_produts = Product::query()
+        ->when($name, function($query) use($name){
+            return $query->where('name', 'like', '%'.$name . '%');
+        })
+        ->get();
+        $latest_produts = Product::query()
+        ->orderBy('id', 'desc')
+        ->get();
+        return response()->json([
+            'status'=>'success',
+            'products'=>$products,
+            'trending_produts'=>$trending_produts,
+            'latest_produts'=>$latest_produts,
+            
+        ]);
     }
 }

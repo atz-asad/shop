@@ -25,8 +25,6 @@
               <form action="{{ route('category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-
-
                 <div class="mb-3">
                   <input class="form-control" name="name" value="{{ $category->name }}" placeholder="category name"
                     type="text">
@@ -43,13 +41,10 @@
                   @endif
                   <input class="form-control" name="photo" placeholder="file" type="file">
                 </div>
-
                 <div>
                   <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
-
               </form>
-
             </div>
           </div>
         </div>
